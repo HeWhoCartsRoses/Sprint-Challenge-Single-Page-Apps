@@ -3,9 +3,5 @@ import Header from "./components/Header.js";
 
 
 export default function App() {
-  return (
-    <main>
-      <Header />
-    </main>
-  );
+  return (<main><Header /></main>);
 }

@@ -1,10 +1,28 @@
-import React, { useState } from "react";
-
-export default function SearchForm() {
- 
+import React from "react";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import Character from "./Character";
+import Spells from "./Spells";
+function SearchForm() {
   return (
-    <section className="search-form">
-     // Add a search form here
-    </section>
+    <Router>
+      <div>
+        <nav className="main-nav">
+          <ul>
+            <li>
+              <Link to="/">Character</Link>
+            </li>
+            <li>
+              <Link to="/spells">Spells</Link>
+            </li>
+          </ul>
+        </nav>
+        <Switch>
+          <Route path="/spells" component={Spells} />
+          <Route path="/" component={Character} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
+
+export default SearchForm;
